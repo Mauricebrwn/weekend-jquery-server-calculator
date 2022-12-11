@@ -1,0 +1,23 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: burlywood;
+}
+h1 {
+    color:darkred;
+    text-align: center;
+    font-size: 45px;
+}
+h2 {
+    font-size: 35px;
+    color: darkred;
+}
+ul {
+    font-size: 30px;
+    color: darkred;
+}
+button {
+    background-color: gold;
+}
+input {
+    width: 175px;
+}

@@ -24,7 +24,7 @@ let inputArray =
         finalResult:''
     }
 
-
+//POST route for server side
 function sendIt(inputArray) {
     $.ajax({
         method:'POST',
@@ -34,7 +34,7 @@ function sendIt(inputArray) {
 console.log(response);
     })
 }
-
+//pulling the values from the inputs
 function submitEquation() {
     let firstInput = $('#numberOne').val()
     let secondInput = $('#numberTwo').val()
