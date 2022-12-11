@@ -1,4 +1,5 @@
-let inputArray = [];
+let serverInput ;
+let serverAnswer = [];
 
 let total ;
 
@@ -10,29 +11,35 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.post('/result', (req, res) => {
-    let answerOne = req.body
-    if(answerOne.operator === "+") {
-        total = Number(answerOne.inputOne) + Number(answerOne)
+    console.log(req.body);
+    serverInput = req.body
+    if(serverInput.operator === '+') {
+        return serverInput.finalResult = Number(serverInput.inputOne) + Number(serverInput)
+        //return serverInput.finalResult = total
     }
-    else if(answerOne.operator === '-'){
-        total = Number(answerOne.inputOne) - Number(answerOne)
+    else if(serverInput.operator === '-'){
+        total = Number(serverInput.inputOne) - Number(serverInput)
+        return serverInput.finalResult = total
     }
-    else if(answerOne.operator === '*'){
-        total = Number(answerOne.inputOne) * Number(answerOne)
+    else if(serverInput.operator === '*'){
+        total = Number(serverInput.inputOne) * Number(serverInput)
+        return serverInput.finalResult = total
     }
-    else if(answerOne.operator === '/'){
-        total = Number(answerOne.inputOne) / Number(answerOne)
+    else if(serverInput.operator === '/'){
+        total = Number(serverInput.inputOne) / Number(serverInput)
+        return serverInput.finalResult = total
     }
-    answerOne.finalResult = total
-    inputArray.push(answerOne);
+    //answerOne.finalResult = total
+    serverAnswer.push(serverInput);
     res.sendStatus(201);
+    console.log('hi')
 })
 
 app.get('/answer', (req, res) => {
-    res.send(inputArray);
+    res.send(serverAnswer);
 })
 
 
 app.listen(PORT,() => {
-    console.log(`hey!`)
+    console.log()
 })
