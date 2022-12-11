@@ -73,24 +73,24 @@ function renderCalculation(){
     }).then((response) => {
         console.log(response);
         $('#answer').text(response[response.length - 1].finalResult)
-    })
+    ;
     $('#calculationList').empty();
     for(let results of response){
         $('#calculationlist').append(`
-        <li>${results.inputOne} ${results.calcOperator} ${results.finalResult}</li>
+        <li>${results.inputOne} ${results.operator} ${results.finalResult}</li>
         `)
     }
-}
+})}
 
 function addition(){
     inputArray.operator = add;
 }
 function subtract(){
-    inputArray[0].operator = minus;
+    inputArray.operator = minus;
 }
 function multiply(){
-    inputArray[0].operator = multiplication;
+    inputArray.operator = multiplication;
 }
 function divide(){
-    inputArray[0].operator = division;
+    inputArray.operator = division;
 }
